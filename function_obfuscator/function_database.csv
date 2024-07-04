@@ -1,0 +1,25 @@
+function_name,dll,typedef
+AddForms,Dsquery,"typedef HRESULT(WINAPI *AddForms_t)(LPCQADDFORMSPROC pAddFormsProc, LPARAM lParam);"
+AddPages,Dsquery,"typedef HRESULT(WINAPI *AddPages_t)(LPCQADDPAGESPROC pAddPagesProc, LPARAM lParam);"
+ADsPropCheckIfWritable,Dsprop,"typedef BOOL(WINAPI *ADsPropCheckIfWritable_t)(const PWSTR pwzAttr, const PADS_ATTR_INFO pWritableAttrs);"
+ADsPropCreateNotifyObj,Dsprop,"typedef HRESULT(WINAPI *ADsPropCreateNotifyObj_t)(LPDATAOBJECT pAppThdDataObj, PWSTR pwzADsObjName, HWND *phNotifyObj);"
+ADsPropGetInitInfo,Dsprop,"typedef BOOL(WINAPI *ADsPropGetInitInfo_t)(HWND hNotifyObj, PADSPROPINITPARAMS pInitParams);"
+ADsPropSendErrorMessage,Dsprop,"typedef BOOL(WINAPI *ADsPropSendErrorMessage_t)(HWND hNotifyObj, PADSPROPERROR pError);"
+ADsPropSetHwnd,Dsprop,"typedef BOOL(WINAPI *ADsPropSetHwnd_t)(HWND hNotifyObj, HWND hPage);"
+ADsPropSetHwndWithTitle,Dsprop,"typedef BOOL(WINAPI *ADsPropSetHwndWithTitle_t)(HWND hNotifyObj, HWND hPage, PTSTR ptzTitle);"
+ADsPropShowErrorDialog,Dsprop,"typedef BOOL(WINAPI *ADsPropShowErrorDialog_t)(HWND hNotifyObj, HWND hPage);"
+Begin,DSAdmin,"typedef HRESULT(WINAPI *Begin_t)(ULONG uEvent, IDataObject *pArg1, IDataObject *pArg2, ULONG *puFlags, BSTR *pBstr);"
+BrowseTo,Dsadmin,"typedef HRESULT(WINAPI *BrowseTo_t)(HWND hwndParent, LPWSTR *ppszTargetPath, DWORD dwFlags);"
+Clear,Dsquery,typedef HRESULT(WINAPI *Clear_t)();
+Commit,DSAdmin,typedef HRESULT(WINAPI *Commit_t)();
+CreateModal,DSAdmin,"typedef HRESULT(WINAPI *CreateModal_t)(HWND hwndParent, IADs **ppADsObj);"
+CreateNew,DSAdmin,typedef HRESULT(WINAPI *CreateNew_t)(LPCWSTR pszName);
+DsAddressToSiteNamesA,Netapi32,"typedef DWORD(WINAPI *DsAddressToSiteNamesA_t)(LPCSTR ComputerName, DWORD EntryCount, PSOCKET_ADDRESS SocketAddresses, LPSTR **SiteNames);"
+DsAddressToSiteNamesExA,Netapi32,"typedef DWORD(WINAPI *DsAddressToSiteNamesExA_t)(LPCSTR ComputerName, DWORD EntryCount, PSOCKET_ADDRESS SocketAddresses, LPSTR **SiteNames, LPSTR **SubnetNames);"
+DsAddressToSiteNamesExW,Netapi32,"typedef DWORD(WINAPI *DsAddressToSiteNamesExW_t)(LPCWSTR ComputerName, DWORD EntryCount, PSOCKET_ADDRESS SocketAddresses, LPWSTR **SiteNames, LPWSTR **SubnetNames);"
+DsAddressToSiteNamesW,Netapi32,"typedef DWORD(WINAPI *DsAddressToSiteNamesW_t)(LPCWSTR ComputerName, DWORD EntryCount, PSOCKET_ADDRESS SocketAddresses, LPWSTR **SiteNames);"
+DsAddSidHistoryA,Ntdsapi,"typedef DWORD(WINAPI *DsAddSidHistoryA_t)(HANDLE hDS, DWORD Flags, LPCSTR SrcDomain, LPCSTR SrcPrincipal, LPCSTR SrcDomainController, RPC_AUTH_IDENTITY_HANDLE SrcDomainCreds, LPCSTR DstDomain, LPCSTR DstPrincipal);"
+DsAddSidHistoryW,Ntdsapi,"typedef DWORD(WINAPI *DsAddSidHistoryW_t)(HANDLE hDS, DWORD Flags, LPCWSTR SrcDomain, LPCWSTR SrcPrincipal, LPCWSTR SrcDomainController, RPC_AUTH_IDENTITY_HANDLE SrcDomainCreds, LPCWSTR DstDomain, LPCWSTR DstPrincipal);"
+DsBindA,Ntdsapi,"typedef DWORD(WINAPI *DsBindA_t)(LPCSTR DomainControllerName, LPCSTR DnsDomainName, HANDLE *phDS);"
+DsBindingSetTimeout,Ntdsapi,"typedef NTDSAPI_POSTXP DWORD(WINAPI *DsBindingSetTimeout_t)(HANDLE hDS, ULONG cTimeoutSecs);"
+DsBindToISTGA,Ntdsapi,"typedef NTDSAPI_POSTXP DWORD(WINAPI *DsBindToISTGA_t)(LPCSTR SiteName, HANDLE *phDS);"
