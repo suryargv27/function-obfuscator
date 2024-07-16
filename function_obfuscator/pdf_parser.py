@@ -9,12 +9,13 @@ options.add_argument("--headless")
 options.add_argument("--log-level=3")
 driver = webdriver.Edge(options=options)
 
+
 def extract_links_with_text(pdf_path):
     # Open the PDF file
     document = pymupdf.open(pdf_path)
 
     # Iterate through each page
-    for page_num in range(5, 10):
+    for page_num in range(5, 5616):
         page = document[page_num]
         print(page_num)
 
@@ -31,13 +32,16 @@ def extract_links_with_text(pdf_path):
                     # Extract the text associated with the link
                     rect = pymupdf.Rect(link["from"])
                     func_name = page.get_text("text", clip=rect).strip()
-                    item = find_function(func_name, uri, driver)
+                    try:
+                        item = find_function(func_name, uri, driver)
+                    except:
+                        pass
                     if item:
                         df.loc[len(df.index)] = item
 
 
 # Example usage
-df = pd.DataFrame(columns=["function_name", "dll","typedef"])
+df = pd.DataFrame(columns=["function_name", "dll", "typedef"])
 pdf_path = "win32api.pdf"
 extract_links_with_text(pdf_path)
 unique_df = df.drop_duplicates(subset=["function_name"])
